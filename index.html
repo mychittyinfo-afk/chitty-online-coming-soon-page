@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>chits.online - Coming Soon</title>
+  <meta name="description"
+    content="chits.online is coming soon. A revolutionary, AI-powered digital platform crafting the future of connected experiences. Sign up to get early access.">
+
+  <!-- Tailwind CSS v4 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Font definitions and custom resets */
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    h1,
+    h2,
+    h3,
+    .font-display {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Glow Effect Utilities */
+    .glow-blue {
+      filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.25));
+    }
+
+    .glow-card {
+      box-shadow: 0 20px 50px -12px rgba(148, 163, 184, 0.15), 0 0 40px -5px rgba(59, 130, 246, 0.05);
+    }
+
+    /* Hourglass Animation Keyframes */
+    @keyframes glass-rotation {
+
+      0%,
+      40% {
+        transform: rotate(0deg);
+      }
+
+      45%,
+      50% {
+        transform: rotate(180deg);
+      }
+
+      50%,
+      90% {
+        transform: rotate(180deg);
+      }
+
+      95%,
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes sand-top-anim {
+
+      /* Phase 1: Drain */
+      0% {
+        transform: scaleY(1);
+        transform-origin: 50px 48px;
+      }
+
+      40% {
+        transform: scaleY(0);
+        transform-origin: 50px 48px;
+      }
+
+      45% {
+        transform: scaleY(0);
+        transform-origin: 50px 48px;
+      }
+
+      50% {
+        transform: scaleY(0);
+        transform-origin: 50px 18px;
+      }
+
+      /* Prep for Phase 2 */
+      /* Phase 2: Fill */
+      55% {
+        transform: scaleY(0);
+        transform-origin: 50px 18px;
+      }
+
+      90% {
+        transform: scaleY(1);
+        transform-origin: 50px 18px;
+      }
+
+      95% {
+        transform: scaleY(1);
+        transform-origin: 50px 18px;
+      }
+
+      100% {
+        transform: scaleY(1);
+        transform-origin: 50px 48px;
+      }
+
+      /* Reset */
+    }
+
+    @keyframes sand-bottom-anim {
+
+      /* Phase 1: Fill */
+      0% {
+        transform: scaleY(0);
+        transform-origin: 50px 82px;
+      }
+
+      40% {
+        transform: scaleY(1);
+        transform-origin: 50px 82px;
+      }
+
+      45% {
+        transform: scaleY(1);
+        transform-origin: 50px 82px;
+      }
+
+      50% {
+        transform: scaleY(1);
+        transform-origin: 50px 52px;
+      }
+
+      /* Prep for Phase 2 */
+      /* Phase 2: Drain */
+      55% {
+        transform: scaleY(1);
+        transform-origin: 50px 52px;
+      }
+
+      90% {
+        transform: scaleY(0);
+        transform-origin: 50px 52px;
+      }
+
+      95% {
+        transform: scaleY(0);
+        transform-origin: 50px 52px;
+      }
+
+      100% {
+        transform: scaleY(0);
+        transform-origin: 50px 82px;
+      }
+
+      /* Reset */
+    }
+
+    @keyframes stream-flow {
+      0% {
+        stroke-dashoffset: 0;
+      }
+
+      100% {
+        stroke-dashoffset: -12;
+      }
+    }
+
+    @keyframes stream-opacity {
+
+      0%,
+      39% {
+        opacity: 1;
+      }
+
+      40%,
+      50% {
+        opacity: 0;
+      }
+
+      51%,
+      89% {
+        opacity: 1;
+      }
+
+      90%,
+      100% {
+        opacity: 0;
+      }
+    }
+
+    @keyframes splash-bounce-1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: translate(1px, -2px) scale(1.5);
+        opacity: 0.35;
+      }
+    }
+
+    @keyframes splash-bounce-2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: translate(-2px, -1.5px) scale(1.3);
+        opacity: 0.35;
+      }
+    }
+
+    @keyframes splash-bounce-3 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+        opacity: 0.85;
+      }
+
+      50% {
+        transform: translate(2px, -1.5px) scale(1.3);
+        opacity: 0.35;
+      }
+    }
+
+    /* Ambient Background Floating Orbs Keyframes */
+    @keyframes float-slow-1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1);
+      }
+
+      50% {
+        transform: translate(30px, -40px) scale(1.1);
+      }
+    }
+
+    @keyframes float-slow-2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(1.05);
+      }
+
+      50% {
+        transform: translate(-40px, 30px) scale(0.95);
+      }
+    }
+
+    @keyframes float-slow-3 {
+
+      0%,
+      100% {
+        transform: translate(0, 0) scale(0.98);
+      }
+
+      50% {
+        transform: translate(20px, 20px) scale(1.02);
+      }
+    }
+
+    /* Animation classes */
+    .hourglass-glass {
+      transform-origin: 50px 50px;
+      animation: glass-rotation 16s cubic-bezier(0.77, 0, 0.175, 1) infinite;
+    }
+
+    .sand-top {
+      animation: sand-top-anim 16s linear infinite;
+    }
+
+    .sand-bottom {
+      animation: sand-bottom-anim 16s linear infinite;
+    }
+
+    .sand-stream {
+      animation: stream-flow 0.4s linear infinite, stream-opacity 16s linear infinite;
+    }
+
+    .splash-1 {
+      transform-origin: 50px 80px;
+      animation: splash-bounce-1 0.4s ease-out infinite, stream-opacity 16s linear infinite;
+    }
+
+    .splash-2 {
+      transform-origin: 48px 81px;
+      animation: splash-bounce-2 0.3s ease-out infinite, stream-opacity 16s linear infinite;
+    }
+
+    .splash-3 {
+      transform-origin: 52px 81px;
+      animation: splash-bounce-3 0.5s ease-out infinite, stream-opacity 16s linear infinite;
+    }
+
+    .orb-1 {
+      animation: float-slow-1 18s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      animation: float-slow-2 22s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      animation: float-slow-3 20s ease-in-out infinite;
+    }
+
+    /* Modern scrollbar styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #f8fafc;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #94a3b8;
+    }
+  </style>
+</head>
+
+<body
+  class="relative min-h-screen bg-slate-50 text-slate-800 overflow-x-hidden flex flex-col justify-between selection:bg-blue-550/15 selection:text-blue-700">
+
+  <!-- Glowing Ambient Background Orbs (White & Blueish Theme) -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+    <div class="orb-1 absolute top-[10%] left-[8%] w-[40vw] h-[40vw] rounded-full bg-blue-200/40 blur-[100px]"></div>
+    <div class="orb-2 absolute bottom-[15%] right-[8%] w-[45vw] h-[45vw] rounded-full bg-indigo-200/40 blur-[110px]">
+    </div>
+    <div class="orb-3 absolute top-[35%] right-[25%] w-[30vw] h-[30vw] rounded-full bg-sky-200/30 blur-[90px]"></div>
+
+    <!-- Premium Grid Overlay -->
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-40">
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="relative z-10 w-full max-w-7xl mx-auto px-6 py-8 flex items-center justify-between">
+    <div class="flex items-center gap-3 group">
+      <!-- Minimalist Logo -->
+      <div
+        class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20 transition-transform group-hover:scale-110 duration-300">
+        <span class="font-display font-bold text-lg text-white">C</span>
+      </div>
+      <span
+        class="font-display font-bold text-lg tracking-wider text-slate-800 group-hover:text-blue-600 transition-colors duration-300">chits.online</span>
+    </div>
+
+    <div>
+      <a href="#about"
+        class="text-xs font-semibold tracking-wider text-slate-600 hover:text-slate-900 uppercase border border-slate-200 hover:border-slate-300 bg-white/80 backdrop-blur-sm rounded-full px-5 py-2.5 shadow-sm transition-all duration-300">
+        Learn More
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="relative z-10 w-full max-w-7xl mx-auto px-6 py-12 flex flex-col items-center justify-center flex-grow">
+
+    <!-- Hero Block / Card (White Glassmorphic Aesthetic) -->
+    <div
+      class="w-full max-w-2xl bg-white/65 backdrop-blur-xl border border-white rounded-3xl p-8 md:p-14 text-center glow-card relative overflow-hidden mb-16 shadow-2xl">
+
+      <!-- Top Glowing Linear Accent -->
+      <div
+        class="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500/40 to-transparent">
+      </div>
+
+      <!-- Launching Badge -->
+      <div
+        class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50/70 border border-blue-100 text-xs font-semibold tracking-wider text-blue-600 uppercase mb-8">
+        <span class="w-2 h-2 rounded-full bg-blue-500 animate-ping"></span>
+        LAUNCHING SOON
+      </div>
+
+      <!-- Custom SVG Hourglass Animation (Blue Theme) -->
+      <div class="relative w-28 h-28 mx-auto mb-8 flex items-center justify-center glow-blue">
+        <!-- SVG Hourglass -->
+        <svg class="w-full h-full" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Ambient Glow for Hourglass -->
+          <circle cx="50" cy="50" r="38" fill="url(#glass-glow)" opacity="0.12" />
+
+          <!-- Rotating Group: Frame and Sand Bulbs -->
+          <g class="hourglass-glass">
+            <!-- Top Cap (Silver/Metallic) -->
+            <path
+              d="M25 13 C25 11.5, 27 10, 30 10 H70 C73 10, 75 11.5, 75 13 C75 14.5, 73 16, 70 16 H30 C27 16, 25 14.5, 25 13 Z"
+              fill="url(#metallic-gradient)" />
+            <!-- Bottom Cap (Silver/Metallic) -->
+            <path
+              d="M25 87 C25 85.5, 27 84, 30 84 H70 C73 84, 75 85.5, 75 87 C75 88.5, 73 90, 70 90 H30 C27 90, 25 88.5, 25 87 Z"
+              fill="url(#metallic-gradient)" />
+
+            <!-- Glass Body Contour -->
+            <path
+              d="M30 16 H70 C70 34, 55 45, 55 50 C55 55, 70 66, 70 84 H30 C30 66, 45 55, 45 50 C45 45, 30 34, 30 16 Z"
+              stroke="url(#glass-gradient)" stroke-width="2.5" fill="url(#bulb-shimmer)" />
+
+            <!-- Internal Bulbs Highlight/Reflection -->
+            <path d="M33 19 C35 32, 48 41, 48 47" stroke="rgba(255, 255, 255, 0.7)" stroke-width="1.5"
+              stroke-linecap="round" />
+            <path d="M67 19 C65 32, 52 41, 52 47" stroke="rgba(255, 255, 255, 0.2)" stroke-width="1.5"
+              stroke-linecap="round" />
+
+            <!-- Top Sand Path (Blue Sand) -->
+            <path class="sand-top" d="M32 18 H68 C68 35, 53 45, 53 48 H47 C47 45, 32 35, 32 18 Z"
+              fill="url(#sand-gradient)" />
+
+            <!-- Bottom Sand Path (Blue Sand) -->
+            <path class="sand-bottom" d="M32 82 H68 C68 65, 53 55, 53 52 H47 C47 55, 32 65, 32 82 Z"
+              fill="url(#sand-gradient)" />
+          </g>
+
+          <!-- Stationary Group: Sand Stream & Splash (Doesn't Rotate) -->
+          <!-- Sand Stream Line (Blue) -->
+          <line class="sand-stream" x1="50" y1="48" x2="50" y2="81" stroke="url(#sand-gradient)" stroke-width="2"
+            stroke-dasharray="2, 5" stroke-linecap="round" />
+
+          <!-- Splash particles at the bottom (Blue hues) -->
+          <circle class="sand-splash splash-1" cx="50" cy="80" r="1.5" fill="#3b82f6" />
+          <circle class="sand-splash splash-2" cx="48.5" cy="81" r="1.0" fill="#60a5fa" />
+          <circle class="sand-splash splash-3" cx="51.5" cy="81" r="1.0" fill="#93c5fd" />
+
+          <!-- Definitions and Gradients -->
+          <defs>
+            <!-- Metallic caps gradient -->
+            <linearGradient id="metallic-gradient" x1="0" y1="0" x2="1" y2="0">
+              <stop offset="0%" stop-color="#94a3b8" />
+              <stop offset="30%" stop-color="#cbd5e1" />
+              <stop offset="50%" stop-color="#f8fafc" />
+              <stop offset="70%" stop-color="#cbd5e1" />
+              <stop offset="100%" stop-color="#94a3b8" />
+            </linearGradient>
+
+            <!-- Sand Blueish Gradient -->
+            <linearGradient id="sand-gradient" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#bfdbfe" />
+              <stop offset="30%" stop-color="#60a5fa" />
+              <stop offset="70%" stop-color="#2563eb" />
+              <stop offset="100%" stop-color="#1e3a8a" />
+            </linearGradient>
+
+            <!-- Glass Border Gradient -->
+            <linearGradient id="glass-gradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(255, 255, 255, 0.85)" />
+              <stop offset="45%" stop-color="rgba(255, 255, 255, 0.45)" />
+              <stop offset="55%" stop-color="rgba(255, 255, 255, 0.45)" />
+              <stop offset="100%" stop-color="rgba(59, 130, 246, 0.45)" />
+            </linearGradient>
+
+            <!-- Subtle Shimmer inside Glass -->
+            <linearGradient id="bulb-shimmer" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="rgba(255, 255, 255, 0.1)" />
+              <stop offset="50%" stop-color="rgba(255, 255, 255, 0.0)" />
+              <stop offset="100%" stop-color="rgba(255, 255, 255, 0.05)" />
+            </linearGradient>
+
+            <!-- Hourglass Glow -->
+            <radialGradient id="glass-glow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#60a5fa" />
+              <stop offset="100%" stop-color="#dbeafe" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+
+      <!-- Main Headline -->
+      <h1
+        class="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-blue-900 to-indigo-950 mb-4"
+        id="main-title">
+        Something Extraordinary is Brewing
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-slate-600 text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-10">
+        chits.online is being forged to elevate your digital connected experiences. Keep an eye on the sands of time as
+        we prepare for the unveil.
+      </p>
+
+      <!-- Countdown Timer Component (White/Blue Theme) -->
+      <div class="grid grid-cols-4 gap-3 md:gap-4 max-w-lg mx-auto mb-10" id="countdown-container">
+        <!-- Days -->
+        <div
+          class="bg-white/75 border border-slate-200/80 rounded-2xl p-3 md:p-4 shadow-sm backdrop-blur-md flex flex-col items-center">
+          <span class="text-2xl md:text-3xl font-extrabold text-blue-600 tracking-tight font-display"
+            id="countdown-days">00</span>
+          <span class="text-[9px] md:text-[10px] tracking-wider text-slate-400 font-bold uppercase mt-1">Days</span>
+        </div>
+        <!-- Hours -->
+        <div
+          class="bg-white/75 border border-slate-200/80 rounded-2xl p-3 md:p-4 shadow-sm backdrop-blur-md flex flex-col items-center">
+          <span class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight font-display"
+            id="countdown-hours">00</span>
+          <span class="text-[9px] md:text-[10px] tracking-wider text-slate-400 font-bold uppercase mt-1">Hours</span>
+        </div>
+        <!-- Minutes -->
+        <div
+          class="bg-white/75 border border-slate-200/80 rounded-2xl p-3 md:p-4 shadow-sm backdrop-blur-md flex flex-col items-center">
+          <span class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight font-display"
+            id="countdown-minutes">00</span>
+          <span class="text-[9px] md:text-[10px] tracking-wider text-slate-400 font-bold uppercase mt-1">Minutes</span>
+        </div>
+        <!-- Seconds -->
+        <div
+          class="bg-white/75 border border-slate-200/80 rounded-2xl p-3 md:p-4 shadow-sm backdrop-blur-md flex flex-col items-center">
+          <span class="text-2xl md:text-3xl font-extrabold text-slate-800 tracking-tight font-display"
+            id="countdown-seconds">00</span>
+          <span class="text-[9px] md:text-[10px] tracking-wider text-slate-400 font-bold uppercase mt-1">Seconds</span>
+        </div>
+      </div>
+
+      <!-- Email Subscription Form -->
+      <div class="max-w-md mx-auto relative z-20">
+        <!-- Interactive Form State -->
+        <form id="subscription-form" class="flex flex-col sm:flex-row gap-3 items-stretch justify-center">
+          <div class="relative flex-grow">
+            <!-- Icon -->
+            <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-slate-400">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                </path>
+              </svg>
+            </div>
+            <!-- Input -->
+            <input type="email" id="email-input" required placeholder="Enter your email address"
+              class="bg-white/80 border border-slate-200 rounded-full py-3.5 pl-12 pr-4 text-sm text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500/80 focus:ring-1 focus:ring-blue-500/30 transition-all duration-300 w-full backdrop-blur-sm">
+          </div>
+          <!-- Submit Button -->
+          <button type="submit" id="subscribe-btn"
+            class="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-sm tracking-wide px-8 py-3.5 rounded-full shadow-lg shadow-blue-500/10 hover:shadow-blue-500/25 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 cursor-pointer">
+            <span>Notify Me</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3">
+              </path>
+            </svg>
+          </button>
+        </form>
+
+        <!-- Form Success State -->
+        <div id="success-message"
+          class="hidden bg-white/90 border border-emerald-100 rounded-2xl p-6 text-center animate-fade-in backdrop-blur-md shadow-md">
+          <div
+            class="w-12 h-12 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-6 h-6 text-emerald-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+            </svg>
+          </div>
+          <h3 class="text-emerald-600 font-bold text-base mb-1">Welcome Aboard!</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">You've successfully subscribed. We will send you exclusive
+            launch details and early access invitations.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- About Section (Scroll Target) -->
+    <section id="about" class="w-full max-w-4xl scroll-mt-24">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-bold tracking-tight text-slate-800 mb-2">What is chits.online?</h2>
+        <div class="w-12 h-[2px] bg-blue-500 mx-auto rounded-full"></div>
+      </div>
+
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div
+          class="bg-white/40 border border-white rounded-2xl p-6 backdrop-blur-sm shadow-sm hover:border-blue-200 hover:bg-white/60 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-blue-500/10 border border-blue-500/20 text-blue-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-blue-500/20 transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-slate-800 font-bold text-base mb-2 group-hover:text-blue-600 transition-colors duration-300">
+            Manage & Monitor</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Easily manage and monitor your chit funds, track
+            contributions, and stay on top of payment deadlines in real-time.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="bg-white/40 border border-white rounded-2xl p-6 backdrop-blur-sm shadow-sm hover:border-blue-200 hover:bg-white/60 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-indigo-500/20 transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+            </svg>
+          </div>
+          <h3
+            class="text-slate-800 font-bold text-base mb-2 group-hover:text-indigo-600 transition-colors duration-300">
+            Visualize Performance</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Visualize the chit funds, track auction statistics, monthly
+            contributions, dividend payouts, and group distributions at a glance.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="bg-white/40 border border-white rounded-2xl p-6 backdrop-blur-sm shadow-sm hover:border-blue-200 hover:bg-white/60 transition-all duration-300 group">
+          <div
+            class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-600 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-sky-500/20 transition-all duration-300">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-slate-800 font-bold text-base mb-2 group-hover:text-sky-600 transition-colors duration-300">
+            Trust & Security</h3>
+          <p class="text-slate-500 text-xs leading-relaxed">Every transaction, dividend distribution, and bid record is
+            cryptographically secured to guarantee absolute trust.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer
+    class="relative z-10 w-full max-w-7xl mx-auto px-6 py-8 border-t border-slate-200/60 flex flex-col md:flex-row items-center justify-between gap-4">
+    <!-- Copyright -->
+    <div class="text-xs text-slate-400">
+      &copy; 2026 chits.online. All rights reserved. Crafting digital frontiers.
+    </div>
+
+    <!-- Social Links -->
+    <div class="flex items-center gap-4">
+      <!-- Twitter/X -->
+      <a href="#" aria-label="Follow us on Twitter"
+        class="w-8 h-8 rounded-full border border-slate-200 hover:border-blue-200 bg-white/80 hover:bg-white flex items-center justify-center text-slate-500 hover:text-blue-600 shadow-sm transition-all duration-300">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+        </svg>
+      </a>
+      <!-- Discord -->
+      <a href="#" aria-label="Join our Discord channel"
+        class="w-8 h-8 rounded-full border border-slate-200 hover:border-blue-200 bg-white/80 hover:bg-white flex items-center justify-center text-slate-500 hover:text-indigo-650 shadow-sm transition-all duration-300">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 127.14 96.36" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M107.7,8.07A105.15,105.15,0,0,0,77.26,0a77.19,77.19,0,0,0-3.3,6.83A96.67,96.67,0,0,0,52.88,6.83,77.19,77.19,0,0,0,49.58,0,105.15,105.15,0,0,0,19.14,8.07C-3,41.24-3.14,73.56,8.62,96.36a106.11,106.11,0,0,0,32.22,16.3,85.29,85.29,0,0,0,6.79-11.08,68.6,68.6,0,0,1-10.74-5.12c.91-.67,1.81-1.37,2.67-2.1a75.6,75.6,0,0,0,76.28,0c.87.73,1.76,1.43,2.68,2.1a68.86,68.86,0,0,1-10.74,5.12,85.29,85.29,0,0,0,6.79,11.08,106.11,106.11,0,0,0,32.22-16.3C131.05,73.56,129.87,41.24,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53S36.18,40.36,42.45,40.36,53.9,46,53.72,53,48.72,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.24,60,73.24,53S78.41,40.36,84.69,40.36,96.14,46,96,53,91,65.69,84.69,65.69Z" />
+        </svg>
+      </a>
+      <!-- GitHub -->
+      <a href="#" aria-label="View our GitHub profile"
+        class="w-8 h-8 rounded-full border border-slate-200 hover:border-blue-200 bg-white/80 hover:bg-white flex items-center justify-center text-slate-500 hover:text-slate-800 shadow-sm transition-all duration-300">
+        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript & Firebase Integration -->
+  <script type="module">
+    // Import the functions you need from the Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // ----------------------------------------------------
+    // Firebase Configuration
+    // Replace these placeholders with your actual Firebase project config credentials:
+    // ----------------------------------------------------
+    const firebaseConfig = {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_PROJECT_ID.appspot.com",
+      messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+      appId: "YOUR_APP_ID"
+    };
+
+    // Check if configuration is active
+    const isFirebaseConfigured =
+      firebaseConfig.apiKey &&
+      !firebaseConfig.apiKey.startsWith("YOUR_") &&
+      firebaseConfig.projectId &&
+      !firebaseConfig.projectId.startsWith("YOUR_");
+
+    let db = null;
+    if (isFirebaseConfigured) {
+      try {
+        const app = initializeApp(firebaseConfig);
+        db = getFirestore(app);
+        console.log("Firebase initialized successfully.");
+      } catch (error) {
+        console.error("Firebase initialization failed:", error);
+      }
+    } else {
+      console.warn("Firebase credentials not set. Running in demo/simulation mode.");
+    }
+
+    // ----------------------------------------------------
+    // Countdown Timer Logic
+    // ----------------------------------------------------
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 14);
+    targetDate.setHours(targetDate.getHours() + 6);
+    targetDate.setMinutes(targetDate.getMinutes() + 32);
+    targetDate.setSeconds(targetDate.getSeconds() + 15);
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference <= 0) {
+        const container = document.getElementById('countdown-container');
+        if (container) {
+          container.innerHTML = `
+            <div class="col-span-4 bg-white/80 border border-blue-500/20 rounded-2xl p-6 text-center backdrop-blur-md shadow-sm">
+              <span class="text-blue-600 font-extrabold tracking-wider text-xl font-display uppercase">Launcher Activated!</span>
+            </div>
+          `;
+        }
+        return;
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+      const formatNumber = num => num.toString().padStart(2, '0');
+
+      const elDays = document.getElementById('countdown-days');
+      const elHours = document.getElementById('countdown-hours');
+      const elMinutes = document.getElementById('countdown-minutes');
+      const elSeconds = document.getElementById('countdown-seconds');
+
+      if (elDays && elHours && elMinutes && elSeconds) {
+        elDays.innerText = formatNumber(days);
+        elHours.innerText = formatNumber(hours);
+        elMinutes.innerText = formatNumber(minutes);
+        elSeconds.innerText = formatNumber(seconds);
+      }
+    }
+
+    updateCountdown();
+    const timerInterval = setInterval(updateCountdown, 1000);
+
+    // ----------------------------------------------------
+    // Subscription Form Submission
+    // ----------------------------------------------------
+    const form = document.getElementById('subscription-form');
+    const input = document.getElementById('email-input');
+    const button = document.getElementById('subscribe-btn');
+    const successMessage = document.getElementById('success-message');
+
+    if (form && input && button && successMessage) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const email = input.value.trim();
+        if (!email) return;
+
+        // Visual loading state
+        input.disabled = true;
+        button.disabled = true;
+        const originalButtonHTML = button.innerHTML;
+        button.innerHTML = `
+          <svg class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>Processing...</span>
+        `;
+
+        if (isFirebaseConfigured && db) {
+          try {
+            // Save data to Firestore collection "subscribers"
+            await addDoc(collection(db, "subscribers"), {
+              email: email,
+              timestamp: serverTimestamp()
+            });
+            showSuccessState();
+          } catch (error) {
+            console.error("Firestore Error:", error);
+            alert("Could not register subscription: " + error.message);
+            resetFormState(originalButtonHTML);
+          }
+        } else {
+          // Simulation/Demo mode fallback
+          setTimeout(() => {
+            showSuccessState();
+          }, 1200);
+        }
+      });
+    }
+
+    function showSuccessState() {
+      form.classList.add('hidden');
+      successMessage.classList.remove('hidden');
+
+      successMessage.style.opacity = 0;
+      successMessage.style.transform = 'translateY(10px)';
+      setTimeout(() => {
+        successMessage.style.transition = 'all 0.5s ease-out';
+        successMessage.style.opacity = 1;
+        successMessage.style.transform = 'translateY(0)';
+      }, 50);
+    }
+
+    function resetFormState(originalHTML) {
+      input.disabled = false;
+      button.disabled = false;
+      button.innerHTML = originalHTML;
+    }
+  </script>
+</body>
+
+</html>
